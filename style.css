@@ -6,9 +6,12 @@
 }
 
 body {
-    background: #0d0d0d;
+    background: radial-gradient(circle at top, #0f2027, #000000 70%);
     color: #eaeaea;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
 }
+
 
 nav {
     display: flex;
@@ -48,6 +51,30 @@ nav ul li a:hover {
     justify-content: space-between;
     padding: 80px 50px;
 }
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90vh;
+}
+
+.hero-text {
+    animation: slideLeft 1.2s ease forwards;
+}
+
+.hero-image {
+    animation: slideRight 1.2s ease forwards;
+}
+
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(60px); }
+    to { opacity: 1; transform: translateX(0); }
+}
 
 .hero-text {
     max-width: 500px;
@@ -59,7 +86,15 @@ nav ul li a:hover {
 
 .hero-image img {
     width: 420px;
-    border-radius: 10px;
+    border-radius: 18px;
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 0 40px rgba(0, 247, 255, 0.25);
+    transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
 }
 
 section {
@@ -84,4 +119,42 @@ footer {
     padding: 20px;
     background: #111;
     margin-top: 40px;
+}
+.floating-icons span {
+    position: absolute;
+    font-size: 24px;
+    animation: float 6s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+.floating-icons span:nth-child(1) { top: 20%; left: 10%; }
+.floating-icons span:nth-child(2) { top: 60%; left: 30%; }
+.floating-icons span:nth-child(3) { top: 40%; right: 20%; }
+.floating-icons span:nth-child(4) { top: 70%; right: 10%; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+.cta-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: #00f7ff;
+    color: #000;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #00cdd4;
+    transform: scale(1.05);
 }
