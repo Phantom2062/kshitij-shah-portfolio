@@ -138,10 +138,11 @@ footer {
     100% { transform: translateY(0); }
 }
 section {
-    opacity: 0;
-    transform: translateY(40px);
+    opacity: 1;
+    transform: translateY(0);
     transition: all 0.8s ease;
 }
+
 .cta-btn {
     display: inline-block;
     margin-top: 25px;
@@ -201,3 +202,4 @@ body::before {
     padding-left: 20px;
     border-left: 3px solid #00f7ff;
 }
+
